@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://5306l36jn6r0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pnwur"]
+
+[node name="FVJUEC" type="Node2D" unique_id=2134146467]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1289426108]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2061544065]
+shape = SubResource("CircleShape2D_pnwur")

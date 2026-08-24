@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://8m0y83mci6xl"]
+
+[ext_resource type="Script" uid="uid://cu6kqjy84ew0g" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dm42xfo8f84px" path="res://icon.svg" id="2_i3pqv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+size = Vector2(32, 32)
+
+[node name="Player" type="CharacterBody2D" unique_id=865248579]
+script = ExtResource("1_onrkg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1158610973]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_i3pqv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1302333985]
+shape = SubResource("RectangleShape2D_epypp")
+
+[node name="up" type="RayCast2D" parent="." unique_id=572227479]
+position = Vector2(0, -32)
+target_position = Vector2(0, -32)
+collision_mask = 3
+hit_from_inside = true
+
+[node name="down" type="RayCast2D" parent="." unique_id=1485558473]
+position = Vector2(0, 32)
+target_position = Vector2(0, 32)
+collision_mask = 3
+hit_from_inside = true
+
+[node name="left" type="RayCast2D" parent="." unique_id=1669603528]
+position = Vector2(-32, 0)
+target_position = Vector2(-32, 0)
+collision_mask = 3
+hit_from_inside = true
+
+[node name="right" type="RayCast2D" parent="." unique_id=776429907]
+position = Vector2(32, 0)
+target_position = Vector2(32, 0)
+collision_mask = 3
+hit_from_inside = true
