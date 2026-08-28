@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bv6spsopbhh3d"]
+
+[ext_resource type="Script" uid="uid://byy564noei2jq" path="res://testset.gd" id="1_8aqpc"]
+[ext_resource type="Script" uid="uid://cprakaywfyu4l" path="res://interaction_test.gd" id="1_bpk2w"]
+[ext_resource type="Script" uid="uid://c412gn00dg48x" path="res://testentity.gd" id="1_lby4p"]
+[ext_resource type="Script" uid="uid://dgdvjkvqf86w6" path="res://Interactions/classes/tag_set.gd" id="2_lby4p"]
+[ext_resource type="Script" uid="uid://cjslis5oeh6s1" path="res://Interactions/classes/tag_info.gd" id="3_bpk2w"]
+
+[sub_resource type="Resource" id="Resource_7ig8j"]
+script = ExtResource("3_bpk2w")
+id = &"fire"
+metadata/_custom_type_script = "uid://cjslis5oeh6s1"
+
+[sub_resource type="Resource" id="Resource_oyv2i"]
+script = ExtResource("2_lby4p")
+tags = Array[ExtResource("3_bpk2w")]([SubResource("Resource_7ig8j")])
+metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
+
+[sub_resource type="Resource" id="Resource_dg250"]
+script = ExtResource("3_bpk2w")
+id = &"flammable"
+metadata/_custom_type_script = "uid://cjslis5oeh6s1"
+
+[sub_resource type="Resource" id="Resource_1ea68"]
+script = ExtResource("2_lby4p")
+tags = Array[ExtResource("3_bpk2w")]([SubResource("Resource_dg250")])
+metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
+
+[node name="Interaction Test" type="Node2D" unique_id=902656701]
+script = ExtResource("1_bpk2w")
+
+[node name="Entity1" type="Node2D" parent="." unique_id=1532291098]
+script = ExtResource("1_lby4p")
+
+[node name="TagSet" type="Node2D" parent="Entity1" unique_id=136253308]
+script = ExtResource("1_8aqpc")
+tag_set = SubResource("Resource_oyv2i")
+
+[node name="Entity2" type="Node2D" parent="." unique_id=426554648]
+script = ExtResource("1_lby4p")
+
+[node name="TagSet" type="Node2D" parent="Entity2" unique_id=508762130]
+script = ExtResource("1_8aqpc")
+tag_set = SubResource("Resource_1ea68")
