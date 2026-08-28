@@ -6,14 +6,14 @@
 [ext_resource type="Script" uid="uid://dgdvjkvqf86w6" path="res://Interactions/classes/tag_set.gd" id="2_lby4p"]
 [ext_resource type="Script" uid="uid://cjslis5oeh6s1" path="res://Interactions/classes/tag_info.gd" id="3_bpk2w"]
 
-[sub_resource type="Resource" id="Resource_7ig8j"]
+[sub_resource type="Resource" id="Resource_w82n4"]
 script = ExtResource("3_bpk2w")
 id = &"fire"
 metadata/_custom_type_script = "uid://cjslis5oeh6s1"
 
-[sub_resource type="Resource" id="Resource_oyv2i"]
+[sub_resource type="Resource" id="Resource_bpk2w"]
 script = ExtResource("2_lby4p")
-tags = Array[ExtResource("3_bpk2w")]([SubResource("Resource_7ig8j")])
+tags = Array[ExtResource("3_bpk2w")]([SubResource("Resource_w82n4")])
 metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
 
 [sub_resource type="Resource" id="Resource_dg250"]
@@ -34,7 +34,7 @@ script = ExtResource("1_lby4p")
 
 [node name="TagSet" type="Node2D" parent="Entity1" unique_id=136253308]
 script = ExtResource("1_8aqpc")
-tag_set = SubResource("Resource_oyv2i")
+tag_set = SubResource("Resource_bpk2w")
 
 [node name="Entity2" type="Node2D" parent="." unique_id=426554648]
 script = ExtResource("1_lby4p")

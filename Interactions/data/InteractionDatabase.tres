@@ -5,8 +5,8 @@
 
 [sub_resource type="Resource" id="Resource_bpk2w"]
 script = ExtResource("1_jbqax")
-source_tag_id = &"fire"
-target_tag_id = &"flammable"
+source_tag_id = &"flammable"
+target_tag_id = &"fire"
 effect_ids = Array[StringName]([&"enflame"])
 metadata/_custom_type_script = "uid://cofd70clmqqyb"
 

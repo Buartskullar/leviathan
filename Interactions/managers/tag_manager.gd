@@ -15,3 +15,6 @@ func _ready() -> void:
 
 func get_tag(tag_id: StringName) -> TagInfo:
 	return _tags_map.get(tag_id, null)
+
+func get_all_tags() -> Array[TagInfo]:
+	return _tags_map.values()

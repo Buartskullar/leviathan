@@ -21,6 +21,10 @@ TagManager="*uid://2ug0wxm4l80e"
 EffectManager="*uid://co3o4hln8wryn"
 InteractionManager="*uid://bjfyfo6rpjt3i"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tag_editor/plugin.cfg")
+
 [input]
 
 move_up={

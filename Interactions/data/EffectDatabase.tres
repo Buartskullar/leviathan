@@ -6,7 +6,6 @@
 [sub_resource type="Resource" id="Resource_kwuff"]
 script = ExtResource("1_nhasd")
 id = &"enflame"
-script_path = "res://Interactions/effects/enflame.gd"
 metadata/_custom_type_script = "uid://ckk3posdktk8p"
 
 [resource]
