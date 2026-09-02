@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="EffectDatabase" format=3 uid="uid://brsgslqrivf8x"]
+
+[ext_resource type="Script" uid="uid://ckk3posdktk8p" path="res://Interactions/classes/effect.gd" id="1_nhasd"]
+[ext_resource type="Script" uid="uid://ddsplu81vc2ur" path="res://Interactions/classes/effect_database.gd" id="2_2hk5h"]
+
+[sub_resource type="Resource" id="Resource_kwuff"]
+script = ExtResource("1_nhasd")
+id = &"enflame"
+metadata/_custom_type_script = "uid://ckk3posdktk8p"
+
+[resource]
+script = ExtResource("2_2hk5h")
+effects = Array[ExtResource("1_nhasd")]([SubResource("Resource_kwuff")])
+metadata/_custom_type_script = "uid://ddsplu81vc2ur"

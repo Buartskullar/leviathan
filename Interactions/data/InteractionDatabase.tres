@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="InteractionDatabase" format=3 uid="uid://b08ifq0ef7v40"]
+
+[ext_resource type="Script" uid="uid://cofd70clmqqyb" path="res://Interactions/classes/interaction_rule.gd" id="1_jbqax"]
+[ext_resource type="Script" uid="uid://dx0bupcj6nd7t" path="res://Interactions/classes/interaction_database.gd" id="2_osk8x"]
+
+[sub_resource type="Resource" id="Resource_bpk2w"]
+script = ExtResource("1_jbqax")
+source_tag_id = &"flammable"
+target_tag_id = &"fire"
+effect_ids = Array[StringName]([&"enflame"])
+metadata/_custom_type_script = "uid://cofd70clmqqyb"
+
+[resource]
+script = ExtResource("2_osk8x")
+rules = Array[ExtResource("1_jbqax")]([SubResource("Resource_bpk2w")])
+metadata/_custom_type_script = "uid://dx0bupcj6nd7t"

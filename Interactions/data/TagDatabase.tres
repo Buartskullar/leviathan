@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="TagDatabase" format=3 uid="uid://fbycugd3skyn"]
+
+[ext_resource type="Script" uid="uid://daf03y3ds5e1d" path="res://Interactions/classes/tag_database.gd" id="1_pgkak"]
+[ext_resource type="Script" uid="uid://cjslis5oeh6s1" path="res://Interactions/classes/tag_info.gd" id="2_eixch"]
+
+[sub_resource type="Resource" id="Resource_6w1g7"]
+script = ExtResource("2_eixch")
+id = &"flammable"
+display_name = "flammable"
+description = "Can be ignited"
+metadata/_custom_type_script = "uid://cjslis5oeh6s1"
+
+[sub_resource type="Resource" id="Resource_kykmi"]
+script = ExtResource("2_eixch")
+id = &"fire"
+display_name = "fire"
+description = "Can ignite"
+metadata/_custom_type_script = "uid://cjslis5oeh6s1"
+
+[resource]
+script = ExtResource("1_pgkak")
+tags = Array[ExtResource("2_eixch")]([SubResource("Resource_6w1g7"), SubResource("Resource_kykmi")])
+metadata/_custom_type_script = "uid://daf03y3ds5e1d"
