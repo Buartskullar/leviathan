@@ -8,9 +8,9 @@ var tiles_grid: Dictionary
 func _ready() -> void:
 	var extracted_tiles_pos = $TileSet.get_used_cells()
 	if extracted_tiles_pos == []:
-		for i in range(9):
-			for z in range(9):
-				if z % 2 == 0:
+		for i in range(32):
+			for z in range(32):
+				if z % 2 == 0 or i % 4 == 0:
 					$TileSet.set_cell(Vector2i(i,z),0,Vector2i(0,0))
 				else:
 					$TileSet.set_cell(Vector2i(i,z),1,Vector2i(0,0))

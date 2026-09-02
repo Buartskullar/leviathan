@@ -13,7 +13,7 @@
 position = Vector2(32, 32)
 
 [node name="Enemy" parent="." unique_id=1091581653 instance=ExtResource("3_epypp")]
-position = Vector2(288, 224)
+position = Vector2(224, 160)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2087975132 node_paths=PackedStringArray("tilemap", "playerobj")]
 script = ExtResource("4_0hol4")
