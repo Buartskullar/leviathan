@@ -23,9 +23,6 @@ func _parse_property(
 			name,
 			TagPicker.new(),
 			false,
-			"Tags"
-		)
-
+			"Tags")
 		return true
-
 	return false
