@@ -1,6 +1,6 @@
 extends Camera2D
 
-@export var tilemap: TileMapLayer
+@export var tilemap: Node2D
 @export var playerobj: CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
@@ -59,9 +59,9 @@ func _aligntotiles():
 	return (Vector2(new_zoom_x, new_zoom_y))
 			
 func GetTilemapInfo():
-	var tile_size = tilemap.tile_set.tile_size
+	var tile_size = tilemap.pass_tilesize()
 	
-	var tilemap_rect = tilemap.get_used_rect()
+	var tilemap_rect = tilemap.pass_usedrect()
 	var tilemap_size = Vector2i(
 		tilemap_rect.end.x - tilemap_rect.position.x,
 		tilemap_rect.end.y - tilemap_rect.position.y

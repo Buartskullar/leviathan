@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cp3h3kliclpt4"]
+
+[ext_resource type="Script" uid="uid://cppauemolk2da" path="res://tile_collider.gd" id="1_l1oc8"]
+[ext_resource type="Script" uid="uid://byy564noei2jq" path="res://testset.gd" id="2_gr832"]
+[ext_resource type="Script" uid="uid://dgdvjkvqf86w6" path="res://Interactions/classes/tag_set.gd" id="3_ovv8q"]
+[ext_resource type="Script" uid="uid://cjslis5oeh6s1" path="res://Interactions/classes/tag_info.gd" id="4_t0w10"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nxp0l"]
+size = Vector2(64, 64)
+
+[sub_resource type="Resource" id="Resource_xftlc"]
+script = ExtResource("3_ovv8q")
+metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
+
+[node name="Area2D" type="Area2D" unique_id=941745502]
+script = ExtResource("1_l1oc8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1976002877]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_nxp0l")
+
+[node name="TagSet" type="Node2D" parent="." unique_id=756122270]
+script = ExtResource("2_gr832")
+tag_set = SubResource("Resource_xftlc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

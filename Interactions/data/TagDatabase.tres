@@ -17,7 +17,14 @@ display_name = "fire"
 description = "Can ignite"
 metadata/_custom_type_script = "uid://cjslis5oeh6s1"
 
+[sub_resource type="Resource" id="Resource_bpk2w"]
+script = ExtResource("2_eixch")
+id = &"solid"
+display_name = "solid"
+description = "solid objects"
+metadata/_custom_type_script = "uid://cjslis5oeh6s1"
+
 [resource]
 script = ExtResource("1_pgkak")
-tags = Array[ExtResource("2_eixch")]([SubResource("Resource_6w1g7"), SubResource("Resource_kykmi")])
+tags = Array[ExtResource("2_eixch")]([SubResource("Resource_6w1g7"), SubResource("Resource_kykmi"), SubResource("Resource_bpk2w")])
 metadata/_custom_type_script = "uid://daf03y3ds5e1d"

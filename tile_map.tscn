@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://118tj1o84xbg"]
+
+[ext_resource type="Script" uid="uid://byeda5a8u3jjk" path="res://tile_map.gd" id="1_1n30v"]
+[ext_resource type="PackedScene" uid="uid://ctosf6cciwhwl" path="res://(OLD)_main_map.tscn" id="2_35kre"]
+
+[node name="TileMap" type="Node2D" unique_id=2050567452]
+script = ExtResource("1_1n30v")
+
+[node name="TileSet" parent="." unique_id=1824360016 instance=ExtResource("2_35kre")]
+tile_map_data = PackedByteArray()
