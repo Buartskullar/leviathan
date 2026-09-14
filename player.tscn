@@ -2,9 +2,24 @@
 
 [ext_resource type="Script" uid="uid://cu6kqjy84ew0g" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dm42xfo8f84px" path="res://icon.svg" id="2_i3pqv"]
+[ext_resource type="Script" uid="uid://byy564noei2jq" path="res://testset.gd" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://dgdvjkvqf86w6" path="res://Interactions/classes/tag_set.gd" id="4_sweqy"]
+[ext_resource type="Script" uid="uid://cjslis5oeh6s1" path="res://Interactions/classes/tag_info.gd" id="5_2hs0m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
 size = Vector2(32, 32)
+
+[sub_resource type="Resource" id="Resource_6w1g7"]
+script = ExtResource("5_2hs0m")
+id = &"flammable"
+display_name = "flammable"
+description = "Can be ignited"
+metadata/_custom_type_script = "uid://cjslis5oeh6s1"
+
+[sub_resource type="Resource" id="Resource_hqtel"]
+script = ExtResource("4_sweqy")
+tags = Array[ExtResource("5_2hs0m")]([SubResource("Resource_6w1g7")])
+metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
 
 [node name="Player" type="CharacterBody2D" unique_id=865248579]
 script = ExtResource("1_onrkg")
@@ -39,3 +54,7 @@ position = Vector2(32, 0)
 target_position = Vector2(32, 0)
 collision_mask = 3
 hit_from_inside = true
+
+[node name="TagSet" type="Node2D" parent="." unique_id=174998746]
+script = ExtResource("3_i3pqv")
+tag_set = SubResource("Resource_hqtel")

@@ -2,6 +2,11 @@ extends CharacterBody2D
 
 const TILE_SIZE = 64
 
+@onready var tag_set_node: TagSetNode = $TagSet
+var tag_set: TagSet:
+	get:
+		return tag_set_node.tag_set
+
 var direction = Vector2()
 
 const UP = Vector2(0, -1)

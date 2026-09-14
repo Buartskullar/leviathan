@@ -2,28 +2,9 @@
 
 [ext_resource type="Script" uid="uid://byeda5a8u3jjk" path="res://tile_map.gd" id="1_1n30v"]
 [ext_resource type="PackedScene" uid="uid://ctosf6cciwhwl" path="res://(OLD)_main_map.tscn" id="2_35kre"]
-[ext_resource type="Script" uid="uid://byy564noei2jq" path="res://testset.gd" id="3_35kre"]
-[ext_resource type="Script" uid="uid://dgdvjkvqf86w6" path="res://Interactions/classes/tag_set.gd" id="4_xftlc"]
-[ext_resource type="Script" uid="uid://cjslis5oeh6s1" path="res://Interactions/classes/tag_info.gd" id="5_anah5"]
-
-[sub_resource type="Resource" id="Resource_kykmi"]
-script = ExtResource("5_anah5")
-id = &"fire"
-display_name = "fire"
-description = "Can ignite"
-metadata/_custom_type_script = "uid://cjslis5oeh6s1"
-
-[sub_resource type="Resource" id="Resource_qtlnl"]
-script = ExtResource("4_xftlc")
-tags = Array[ExtResource("5_anah5")]([SubResource("Resource_kykmi")])
-metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
 
 [node name="TileMap" type="Node2D" unique_id=2050567452]
 script = ExtResource("1_1n30v")
 
 [node name="TileSet" parent="." unique_id=1824360016 instance=ExtResource("2_35kre")]
 tile_map_data = PackedByteArray()
-
-[node name="TagSet" type="Node2D" parent="." unique_id=1782975075]
-script = ExtResource("3_35kre")
-tag_set = SubResource("Resource_qtlnl")
