@@ -84,13 +84,40 @@ func _add_tag_row(tag: TagInfo) -> void:
 	var edit_button := Button.new()
 	edit_button.text = "Edit"
 	edit_button.pressed.connect(_edit_tag.bind(tag))
+	var used_button := Button.new()
+	used_button.text = "Used By"
+	used_button.pressed.connect(_show_used_by.bind(tag))
 	var delete_button := Button.new()
 	delete_button.text = "Delete"
 	delete_button.pressed.connect(_confirm_delete.bind(tag))
 	row.add_child(id_label)
 	row.add_child(edit_button)
+	row.add_child(used_button)
 	row.add_child(delete_button)
 	tag_list.add_child(row)
+
+func _show_used_by(tag: TagInfo) -> void:
+	var dialog := AcceptDialog.new()
+	dialog.title = "Used By: " + str(tag.id)
+	var text := ""
+	var interaction_db := load("res://Interactions/data/InteractionDatabase.tres") as InteractionDatabase
+	if interaction_db:
+		for rule in interaction_db.rules:
+			if rule == null:
+				continue
+			if rule.source_tag_id == tag.id:
+				text += "%s → %s\n" % [tag.id, rule.target_tag_id]
+			elif rule.target_tag_id == tag.id:
+				text += "%s → %s\n" % [rule.source_tag_id, tag.id]
+	if text.is_empty():
+		text = "This tag is not used by any interaction."
+	var label := Label.new()
+	label.text = text
+	label.custom_minimum_size = Vector2(400, 100)
+	label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	dialog.add_child(label)
+	add_child(dialog)
+	dialog.popup_centered()
 
 func _add_tag() -> void:
 	var editor := preload("res://addons/tag_editor/tag_editor.gd").new()

@@ -9,6 +9,7 @@ var editing_effect: Effect
 var id_edit := LineEdit.new()
 var script_path_edit := LineEdit.new()
 var path_was_changed := false
+var description_edit := TextEdit.new()
 
 func setup(db: EffectDatabase, effect: Effect) -> void:
 	database = db
@@ -32,6 +33,11 @@ func _build_ui() -> void:
 	root.add_child(id_label)
 	root.add_child(id_edit)
 	id_edit.placeholder_text = "enflame"
+	var description_label := Label.new()
+	description_label.text = "Description"
+	root.add_child(description_label)
+	description_edit.custom_minimum_size = Vector2(0, 80)
+	root.add_child(description_edit)
 	var script_label := Label.new()
 	script_label.text = "Script Path"
 	root.add_child(script_label)
@@ -53,6 +59,7 @@ func _load_effect() -> void:
 	if editing_effect == null:
 		return
 	id_edit.text = str(editing_effect.id)
+	description_edit.text = editing_effect.description
 	script_path_edit.text = editing_effect.script_path
 
 func _on_id_changed(new_id: String) -> void:
@@ -109,6 +116,7 @@ func _save() -> void:
 				database.effects.erase(editing_effect)
 			return
 	editing_effect.id = StringName(id)
+	editing_effect.description = description_edit.text
 	editing_effect.script_path = script_path
 	database.emit_changed()
 	var error := ResourceSaver.save(database, EFFECT_DB_PATH)
