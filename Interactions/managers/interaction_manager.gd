@@ -9,7 +9,7 @@ func _ready() -> void:
 		push_error("Ошибка загрузки матрицы взаимодействий")
 		return
 	database.build_index()
-
+	
 func process_interaction(source: Node, target: Node) -> void:
 	var source_tag_set: TagSet = source.get_node("TagSet").tag_set
 	var target_tag_set: TagSet = target.get_node("TagSet").tag_set
