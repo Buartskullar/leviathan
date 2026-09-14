@@ -36,24 +36,28 @@ position = Vector2(0, -32)
 target_position = Vector2(0, -32)
 collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="down" type="RayCast2D" parent="." unique_id=1485558473]
 position = Vector2(0, 32)
 target_position = Vector2(0, 32)
 collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="left" type="RayCast2D" parent="." unique_id=1669603528]
 position = Vector2(-32, 0)
 target_position = Vector2(-32, 0)
 collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="right" type="RayCast2D" parent="." unique_id=776429907]
 position = Vector2(32, 0)
 target_position = Vector2(32, 0)
 collision_mask = 3
 hit_from_inside = true
+collide_with_areas = true
 
 [node name="TagSet" type="Node2D" parent="." unique_id=174998746]
 script = ExtResource("3_i3pqv")

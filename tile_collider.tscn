@@ -8,16 +8,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxp0l"]
 size = Vector2(64, 64)
 
-[sub_resource type="Resource" id="Resource_kykmi"]
-script = ExtResource("4_t0w10")
-id = &"fire"
-display_name = "fire"
-description = "Can ignite"
-metadata/_custom_type_script = "uid://cjslis5oeh6s1"
-
 [sub_resource type="Resource" id="Resource_xftlc"]
 script = ExtResource("3_ovv8q")
-tags = Array[ExtResource("4_t0w10")]([SubResource("Resource_kykmi")])
 metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
 
 [node name="Area2D" type="Area2D" unique_id=941745502]

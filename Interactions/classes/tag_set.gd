@@ -13,6 +13,7 @@ func add_tag(tag_identifier: Variant) -> void:
 		return
 	if not has_tag(target_tag):
 		tags.append(target_tag)
+		pass
 
 func remove_tag(tag_identifier: Variant) -> void:
 	var target_tag: TagInfo = _get_tag_resource(tag_identifier)

@@ -1,15 +1,28 @@
 [gd_scene format=3 uid="uid://dw34kha68cpeh"]
 
+[ext_resource type="Script" uid="uid://cq27tovyntg5j" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://qoiaml5kov4" path="res://enemy.png" id="1_7k104"]
+[ext_resource type="Script" uid="uid://byy564noei2jq" path="res://testset.gd" id="3_qi2p4"]
+[ext_resource type="Script" uid="uid://dgdvjkvqf86w6" path="res://Interactions/classes/tag_set.gd" id="4_epg4t"]
+[ext_resource type="Script" uid="uid://cjslis5oeh6s1" path="res://Interactions/classes/tag_info.gd" id="5_3yqyl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
 size = Vector2(64, 64)
 
+[sub_resource type="Resource" id="Resource_iifgy"]
+script = ExtResource("4_epg4t")
+metadata/_custom_type_script = "uid://dgdvjkvqf86w6"
+
 [node name="Enemy" type="StaticBody2D" unique_id=1091581653 groups=["destructable"]]
 collision_mask = 2
+script = ExtResource("1_4gyqm")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=534896096]
 texture = ExtResource("1_7k104")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1244443906]
 shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="TagSet" type="Node2D" parent="." unique_id=233735425]
+script = ExtResource("3_qi2p4")
+tag_set = SubResource("Resource_iifgy")

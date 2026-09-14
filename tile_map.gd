@@ -45,13 +45,19 @@ func _go_forth_my_tags(body: Node2D, tile: Node2D):
 
 func _make_zones(tiles_grid):
 	#должен создавать боксы коллизий
+	#сделать умнее, чтобы ты давал все теги и жёстко раздавал
 	for tile in tiles_grid:
-		if tiles_grid[tile] == 2:
+		if tiles_grid[tile] == 1:
 			var collider = colliderzone.instantiate()
 			collider.global_position = Vector2(tile) * 64
 			add_child(collider)
+			collider.tag_set.add_tag("solid")
+		elif tiles_grid[tile] == 2:
+			var collider = colliderzone.instantiate()
+			collider.global_position = Vector2(tile) * 64
+			add_child(collider)
+			collider.tag_set.add_tag("fire")
 			collider._body_entered_with_self.connect(_go_forth_my_tags)
-
 
 func pass_tilesize():
 	return $TileSet.tile_set.tile_size
